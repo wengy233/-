@@ -17,15 +17,11 @@ protected:
     int **Edge;      //æƒå€¼
 public:
     Graphmtx();   //åˆå§‹åŒ–
-<<<<<<< HEAD
     ~Graphmtx();
     bool removeVertex(int v);//É¾³ıµã 
     bool removeEdge(int v1,int v2);//É¾³ı±ß 
     void remove(int v);//É¾³ıÄ³Â·ÓÉ±í 
     void remove2(int v1,int v2);//É¾³ıÄ³±ß 
-=======
-    ï½Graphmtx();
-	void Shortest(int n);   //æœ€çŸ­è·¯å¾„è®¡ç®—
->>>>>>> 76c401b8714e6484f30af79eca4601ffdeb4c789
+	void Shortest(int n);   //æœ€çŸ­è·¯å¾„è®¡ç®— 
 };
 #endif /* tp_h */

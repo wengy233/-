@@ -17,5 +17,6 @@ protected:
 public:
     Graphmtx();   //初始化
     ～Graphmtx();
+	void Shortest(int n);   //最短路径计算
 };
 #endif /* tp_h */

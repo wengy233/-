@@ -33,7 +33,7 @@ bool Graphmtx::removeVertex(int v)
         Edge[v][j] =Edge[numVertices][j];
     return true;
 }
-ool Graphmtx::removeEdge(int v1,int v2)
+bool Graphmtx::removeEdge(int v1,int v2)
 {
     if (v1 > -1 && v1< numVertices && v2>-1 && v2<numVertices && Edge[v1][v2] > 0 && v1 != v2 && Edge[v1][v2]< maxWeight)
     {

@@ -18,6 +18,7 @@ protected:
 public:
     Graphmtx();   //åˆå§‹åŒ–
     ~Graphmtx();
+    int search(int v); 
     bool removeVertex(int v);//É¾³ıµã 
     bool removeEdge(int v1,int v2);//É¾³ı±ß 
     void remove(int v);//É¾³ıÄ³Â·ÓÉ±í 

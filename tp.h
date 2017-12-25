@@ -1,7 +1,7 @@
 #ifndef tp_h
 #define tp_h
-const int maxVertices 10;
-const int maxWeight=INT_MAX;
+const int maxVertices;
+const int maxWeight;
 using namespace std;
 struct Router{
     int number;    //路由表编号

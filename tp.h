@@ -1,6 +1,7 @@
 #ifndef tp_h
 #define tp_h
-const int maxVertices 10;
+#include<string>
+const int maxVertices=10;
 const int maxWeight=INT_MAX;
 using namespace std;
 struct Router{
@@ -16,6 +17,10 @@ protected:
     int **Edge;      //æƒå€¼
 public:
     Graphmtx();   //åˆå§‹åŒ–
-    ï½Graphmtx();
+    ~Graphmtx();
+    bool removeVertex(int v);//É¾³ıµã 
+    bool removeEdge(int v1,int v2);//É¾³ı±ß 
+    void remove(int v);//É¾³ıÄ³Â·ÓÉ±í 
+    void remove2(int v1,int v2);//É¾³ıÄ³±ß 
 };
 #endif /* tp_h */

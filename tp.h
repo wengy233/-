@@ -23,8 +23,6 @@ public:
     bool insertEdge(int v1,int v2,int cost);
     bool removeVertex(int v);//删除顶点 
     bool removeEdge(int v1,int v2);//删除边 
-    void remove(int v);//删除某路由器 
-    void remove2(int v1,int v2);//删除两路由器间的链路 
     void Shortest(int n);
     void printPath(int v,int dist[],int path[]);
     void shuchu();

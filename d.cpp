@@ -14,7 +14,10 @@ bool Graphmtx::removeVertex(int v)
         return false;
     	}
     int i,j;
-    VerticesList[v] = VerticesList[numVertices - 1];
+    for(i=v;(i+1)<numVertices;i++)
+    {
+    	VerticesList[i] = VerticesList[i+1];
+	}
     p[v]=p[numVertices-1];//É¾³ý 
     for(i = 0;i<numVertices;i++)
     {

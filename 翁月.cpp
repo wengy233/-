@@ -63,7 +63,7 @@ void Graphmtx::printPath(int v, int dist[], int path[])
                 j = path[j];
             }
             cout <<"| 目的路由"<<p[i]<<" ";
-            cout <<"下一跳："<<d[--k]+1<<" ";
+            cout <<"下一跳："<<p[d[--k]+1]<<" ";
             cout << "权值：" << dist[i] <<" |"<< endl;
         }
     }
@@ -81,6 +81,11 @@ int Graphmtx::re(int q){
 }
 void Graphmtx::shuchu(){
     for(int i=0;i<numVertices;i++){
+        cout<<p[i]<<"  ";
+    }
+    cout<<endl;
+    for(int i=0;i<numVertices;i++){
+        cout<<p[i]<<" | ";
         for(int j=0;j<numVertices;j++){
             if(Edge[i][j]==INT_MAX){
                 cout<<"Max ";

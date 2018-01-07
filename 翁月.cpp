@@ -35,7 +35,7 @@ bool Graphmtx::insertEdge(int v1, int v2,int cost)
 }
 void Graphmtx::printPath(int v, int dist[], int path[])
 {
-    cout << "| è·¯ç”±å™¨" << p[v] <<"è·¯ç”±è¡¨ï¼š" <<"           |"<< endl;
+    cout << "| Â·ÓÉÆ÷" << p[v] <<"Â·ÓÉ±í£º" <<"           |"<< endl;
     int i, j, k, n =numVertices;
     int * d = new int[n];
     for (i = 0; i<n; i++)
@@ -49,9 +49,9 @@ void Graphmtx::printPath(int v, int dist[], int path[])
                 d[k++] = j;
                 j = path[j];
             }
-            cout <<"| ç›®çš„è·¯ç”±"<<p[i]<<" ";
-            cout <<"ä¸‹ä¸€è·³ï¼š"<<d[--k]+1<<" ";
-            cout << "æƒå€¼ï¼š" << dist[i] <<" |"<< endl;
+            cout <<"| Ä¿µÄÂ·ÓÉ"<<p[i]<<" ";
+            cout <<"ÏÂÒ»Ìø£º"<<d[--k]+1<<" ";
+            cout << "È¨Öµ£º" << dist[i] <<" |"<< endl;
         }
     }
     delete[] d;

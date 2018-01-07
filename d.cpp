@@ -13,12 +13,18 @@ int Graphmtx::search(int v){
 bool Graphmtx::removeVertex(int v)
 {
     if(v < 0 && v>= numVertices)
+    	{
+		 cout<< "不存在该路由器！！！"<<endl;
+         return false;
+        } 
+    if(numVertices == 1)//只有一个点，不构成任何边 
+    	{
+		cout<<"只存在一个路由器,无法生成路由表！！！"<<endl; 
         return false;
-    if(numVertices == 1)
-        return false;
+    	}
     int i,j;
     VerticesList[v] = VerticesList[numVertices - 1];
-    p[v]=p[numVertices-1];
+    p[v]=p[numVertices-1];//删除 
     for(i = 0;i<numVertices;i++)
     {
         if( Edge[i][v] >0 && Edge[i][v] <maxWeight )
@@ -49,11 +55,21 @@ bool Graphmtx::removeEdge(int v1,int v2)
 void Graphmtx::remove(int v){
     int i;
     i=search(v);
+    if(i==numVertices)
+    {
+    	cout<<"不存在该路由器！！！"<<endl;
+    	return;
+	}
     removeVertex(i);
 }
 void Graphmtx::remove2(int v1,int v2){
     int i,j;
     i=search(v1);
     j=search(v2);
+    if(i==numVertices||j==numVertices)
+    {
+    	cout<<"i或j路由器不存在！！！"<<endl;
+    	return;
+	}
     removeEdge(i,j);
 }

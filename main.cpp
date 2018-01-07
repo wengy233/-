@@ -2,6 +2,9 @@
 #include <fstream>
 #include "assert.h"
 #include "tp.h"
+#include"ÎÌÔÂ.cpp"
+#include"d.cpp"
+#include"Shortest.cpp" 
 int maxVertices=10;
 int maxWeight=INT_MAX;
 int main(int argc, const char * argv[]) {
@@ -23,31 +26,31 @@ int main(int argc, const char * argv[]) {
         t.insertEdge(x2-1,y2-1,cost);
         f2>>x2>>y2>>cost;
     }
-    cout<<"é‚»é˜¶çŸ©é˜µï¼š"<<endl;
+    cout<<"ÁÚ½×¾ØÕó£º"<<endl;
     t.shuchu();
     while(1)
     {
         cout<<"*******************************"<<endl;
-        cout<<"1.æŸ¥è¯¢è·¯ç”±è¡¨ 2.åˆ é™¤è·¯ç”±å™¨ 3.åˆ é™¤è¾¹ 4.é€€å‡º"<<endl;
+        cout<<"1.²éÑ¯Â·ÓÉ±í 2.É¾³ýÂ·ÓÉÆ÷ 3.É¾³ý±ß 4.ÍË³ö"<<endl;
         cin>>m;
         if(m==1){
-            cout<<"è¯·è¾“å…¥è·¯ç”±å™¨ç¼–å·ï¼š"<<endl;;
+            cout<<"ÇëÊäÈëÂ·ÓÉÆ÷±àºÅ£º"<<endl;;
             cin>>n;
             cout<<"---------------------------"<<endl;
             t.Shortest(n-1);
             cout<<"---------------------------"<<endl;
         }
         else if(m==2){
-            cout<<"è¯·è¾“å…¥åˆ é™¤çš„è·¯ç”±å™¨ç¼–å·ï¼š"<<endl;
+            cout<<"ÇëÊäÈëÉ¾³ýµÄÂ·ÓÉÆ÷±àºÅ£º"<<endl;
             cin>>p;
             t.remove(p);
             t.shuchu();
         }
         else if(m==3){
-            cout<<"è¯·è¾“å…¥åˆ é™¤è¾¹çš„ä¸¤ä¸ªè·¯ç”±å™¨ç¼–å·ï¼š"<<endl;
-            cout<<"ç¬¬ä¸€ä¸ªï¼š"<<endl;
+            cout<<"ÇëÊäÈëÉ¾³ý±ßµÄÁ½¸öÂ·ÓÉÆ÷±àºÅ£º"<<endl;
+            cout<<"µÚÒ»¸ö£º"<<endl;
             cin>>p;
-            cout<<"ç¬¬äºŒä¸ªï¼š"<<endl;
+            cout<<"µÚ¶þ¸ö£º"<<endl;
             cin>>q;
             t.remove2(p,q);
             t.shuchu();
@@ -56,7 +59,7 @@ int main(int argc, const char * argv[]) {
             break;
         }
         else{
-            cout<<"è¾“å…¥é”™è¯¯"<<endl;
+            cout<<"ÊäÈë´íÎó"<<endl;
         }
         cout<<"*******************************"<<endl;
         

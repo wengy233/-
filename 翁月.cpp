@@ -1,3 +1,11 @@
+//
+//  翁月.cpp
+//  3
+//
+//  Created by 翁月 on 2017/12/25.
+//  Copyright © 2017年 翁月. All rights reserved.
+//
+
 #include <iostream>
 #include "tp.h"
 using namespace std;
@@ -63,7 +71,7 @@ void Graphmtx::printPath(int v, int dist[], int path[])
                 j = path[j];
             }
             cout <<"| 目的路由"<<p[i]<<" ";
-            cout <<"下一跳："<<p[d[--k]+1]<<" ";
+            cout <<"下一跳："<<p[d[--k]]<<" ";
             cout << "权值：" << dist[i] <<" |"<< endl;
         }
     }
@@ -80,6 +88,7 @@ int Graphmtx::re(int q){
     return v;
 }
 void Graphmtx::shuchu(){
+    cout<<"     ";
     for(int i=0;i<numVertices;i++){
         cout<<p[i]<<"  ";
     }

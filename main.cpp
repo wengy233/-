@@ -2,7 +2,7 @@
 #include <fstream>
 #include "assert.h"
 #include "tp.h"
-#include"ÎÌÔÂ.cpp"
+#include"ç¿æœˆ.cpp"
 #include"d.cpp"
 #include"Shortest.cpp" 
 int maxVertices=10;
@@ -10,7 +10,7 @@ int maxWeight=INT_MAX;
 int main(int argc, const char * argv[]) {
     // insert code here...
     Graphmtx t;
-    int x,x2,y2,cost,n,m,p,q;
+    int x,x2,y2,cost,n,m,p,q,kk;
     string y;
     ifstream in("Router.txt",ios::in);
     assert(in);
@@ -23,34 +23,35 @@ int main(int argc, const char * argv[]) {
     assert(f2);
     f2>>x2>>y2>>cost;
     while(f2){
-        t.insertEdge(x2-1,y2-1,cost);
+        t.insertEdge(x2,y2,cost);
         f2>>x2>>y2>>cost;
     }
-    cout<<"ÁÚ½×¾ØÕó£º"<<endl;
+    cout<<"é‚»é˜¶çŸ©é˜µï¼š"<<endl;
     t.shuchu();
     while(1)
     {
         cout<<"*******************************"<<endl;
-        cout<<"1.²éÑ¯Â·ÓÉ±í 2.É¾³ýÂ·ÓÉÆ÷ 3.É¾³ý±ß 4.ÍË³ö"<<endl;
+        cout<<"1.æŸ¥è¯¢è·¯ç”±è¡¨ 2.åˆ é™¤è·¯ç”±å™¨ 3.åˆ é™¤è¾¹ 4.é€€å‡º"<<endl;
         cin>>m;
         if(m==1){
-            cout<<"ÇëÊäÈëÂ·ÓÉÆ÷±àºÅ£º"<<endl;;
+            cout<<"è¯·è¾“å…¥è·¯ç”±å™¨ç¼–å·ï¼š"<<endl;;
             cin>>n;
             cout<<"---------------------------"<<endl;
-            t.Shortest(n-1);
+            kk=t.re(n);
+            t.Shortest(kk);
             cout<<"---------------------------"<<endl;
         }
         else if(m==2){
-            cout<<"ÇëÊäÈëÉ¾³ýµÄÂ·ÓÉÆ÷±àºÅ£º"<<endl;
+            cout<<"è¯·è¾“å…¥åˆ é™¤çš„è·¯ç”±å™¨ç¼–å·ï¼š"<<endl;
             cin>>p;
             t.remove(p);
             t.shuchu();
         }
         else if(m==3){
-            cout<<"ÇëÊäÈëÉ¾³ý±ßµÄÁ½¸öÂ·ÓÉÆ÷±àºÅ£º"<<endl;
-            cout<<"µÚÒ»¸ö£º"<<endl;
+            cout<<"è¯·è¾“å…¥åˆ é™¤è¾¹çš„ä¸¤ä¸ªè·¯ç”±å™¨ç¼–å·ï¼š"<<endl;
+            cout<<"ç¬¬ä¸€ä¸ªï¼š"<<endl;
             cin>>p;
-            cout<<"µÚ¶þ¸ö£º"<<endl;
+            cout<<"ç¬¬äºŒä¸ªï¼š"<<endl;
             cin>>q;
             t.remove2(p,q);
             t.shuchu();
@@ -59,7 +60,7 @@ int main(int argc, const char * argv[]) {
             break;
         }
         else{
-            cout<<"ÊäÈë´íÎó"<<endl;
+            cout<<"è¾“å…¥é”™è¯¯"<<endl;
         }
         cout<<"*******************************"<<endl;
         

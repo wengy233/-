@@ -1,11 +1,3 @@
-//
-//  main.cpp
-//  3
-//
-//  Created by 翁月 on 2017/12/25.
-//  Copyright © 2017年 翁月. All rights reserved.
-//
-
 #include <iostream>
 #include <fstream>
 #include "assert.h"

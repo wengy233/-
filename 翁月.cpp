@@ -25,9 +25,22 @@ bool Graphmtx::insertVertex(int n,const string vertex)
 }
 bool Graphmtx::insertEdge(int v1, int v2,int cost)
 {
-    if(v1 > -1 && v1< numVertices && v2>-1 && v2<numVertices && Edge[v1][v2] == maxWeight)
+    int w1=-1,w2=-1;
+    for(int i=0;i<numVertices;i++){
+        if(p[i]==v1){
+            w1=i;
+        }
+        if(p[i]==v2){
+            w2=i;
+        }
+        if(w1!=-1&&w2!=-1){
+            break;
+        }
+    }
+    cout<<w1<<" "<<w2<<endl;
+    if(w1 > -1 && w2< numVertices && w1>-1 && w2<numVertices && Edge[w1][w2] == maxWeight)
     {
-        Edge[v1][v2] = Edge[v2][v1] = cost;
+        Edge[w1][w2] = Edge[w2][w1] = cost;
         numEdges ++;
         return true;
     }
@@ -35,7 +48,7 @@ bool Graphmtx::insertEdge(int v1, int v2,int cost)
 }
 void Graphmtx::printPath(int v, int dist[], int path[])
 {
-    cout << "| Â·ÓÉÆ÷" << p[v] <<"Â·ÓÉ±í£º" <<"           |"<< endl;
+    cout << "| è·¯ç”±å™¨" << p[v] <<"è·¯ç”±è¡¨ï¼š" <<"           |"<< endl;
     int i, j, k, n =numVertices;
     int * d = new int[n];
     for (i = 0; i<n; i++)
@@ -49,12 +62,22 @@ void Graphmtx::printPath(int v, int dist[], int path[])
                 d[k++] = j;
                 j = path[j];
             }
-            cout <<"| Ä¿µÄÂ·ÓÉ"<<p[i]<<" ";
-            cout <<"ÏÂÒ»Ìø£º"<<d[--k]+1<<" ";
-            cout << "È¨Öµ£º" << dist[i] <<" |"<< endl;
+            cout <<"| ç›®çš„è·¯ç”±"<<p[i]<<" ";
+            cout <<"ä¸‹ä¸€è·³ï¼š"<<d[--k]+1<<" ";
+            cout << "æƒå€¼ï¼š" << dist[i] <<" |"<< endl;
         }
     }
     delete[] d;
+}
+int Graphmtx::re(int q){
+    int v;
+    for(int h=0;h<numVertices;h++){
+        if(p[h]==q){
+            v=h;
+            break;
+        }
+    }
+    return v;
 }
 void Graphmtx::shuchu(){
     for(int i=0;i<numVertices;i++){

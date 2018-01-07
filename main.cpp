@@ -7,7 +7,7 @@ int maxWeight=INT_MAX;
 int main(int argc, const char * argv[]) {
     // insert code here...
     Graphmtx t;
-    int x,x2,y2,cost,n,m,p,q;
+    int x,x2,y2,cost,n,m,p,q,kk,kkk;
     string y;
     ifstream in("Router.txt",ios::in);
     assert(in);
@@ -20,7 +20,7 @@ int main(int argc, const char * argv[]) {
     assert(f2);
     f2>>x2>>y2>>cost;
     while(f2){
-        t.insertEdge(x2-1,y2-1,cost);
+        t.insertEdge(x2,y2,cost);
         f2>>x2>>y2>>cost;
     }
     cout<<"邻阶矩阵："<<endl;
@@ -34,13 +34,15 @@ int main(int argc, const char * argv[]) {
             cout<<"请输入路由器编号："<<endl;;
             cin>>n;
             cout<<"---------------------------"<<endl;
-            t.Shortest(n-1);
+            kk=t.re(n);
+            t.Shortest(kk);
             cout<<"---------------------------"<<endl;
         }
         else if(m==2){
             cout<<"请输入删除的路由器编号："<<endl;
             cin>>p;
-            t.remove(p);
+            kk=t.re(p);
+            t.removeVertex(kk);
             t.shuchu();
         }
         else if(m==3){
@@ -49,7 +51,9 @@ int main(int argc, const char * argv[]) {
             cin>>p;
             cout<<"第二个："<<endl;
             cin>>q;
-            t.remove2(p,q);
+            kk=t.re(p);
+            kkk=t.re(q);
+            t.removeEdge(kk,kkk);
             t.shuchu();
         }
         else if(m==4){

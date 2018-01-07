@@ -17,13 +17,14 @@ protected:
     int **Edge;
 public:
     Graphmtx();
-    int search(int v);//²éÕÒÂ·ÓÉÆ÷ËùÔÚÁÚ½Ó¾ØÕóÎ»ÖÃ 
+    int search(int v);//æŸ¥æ‰¾è·¯ç”±å™¨æ‰€åœ¨é‚»æ¥çŸ©é˜µä½ç½® 
+    int re(int q);
     bool insertVertex(int n,const string vertex);
     bool insertEdge(int v1,int v2,int cost);
-    bool removeVertex(int v);//É¾³ı¶¥µã 
-    bool removeEdge(int v1,int v2);//É¾³ı±ß 
-    void remove(int v);//É¾³ıÄ³Â·ÓÉÆ÷ 
-    void remove2(int v1,int v2);//É¾³ıÁ½Â·ÓÉÆ÷¼äµÄÁ´Â· 
+    bool removeVertex(int v);//åˆ é™¤é¡¶ç‚¹ 
+    bool removeEdge(int v1,int v2);//åˆ é™¤è¾¹ 
+    void remove(int v);//åˆ é™¤æŸè·¯ç”±å™¨ 
+    void remove2(int v1,int v2);//åˆ é™¤ä¸¤è·¯ç”±å™¨é—´çš„é“¾è·¯ 
     void Shortest(int n);
     void printPath(int v,int dist[],int path[]);
     void shuchu();

@@ -10,7 +10,7 @@ int maxWeight=INT_MAX;
 int main(int argc, const char * argv[]) {
     // insert code here...
     Graphmtx t;
-    int x,x2,y2,cost,n,m,p,q,kk;
+    int x,x2,y2,cost,n,m,p,q,kk,kkk;
     string y;
     ifstream in("Router.txt",ios::in);
     assert(in);
@@ -44,7 +44,8 @@ int main(int argc, const char * argv[]) {
         else if(m==2){
             cout<<"请输入删除的路由器编号："<<endl;
             cin>>p;
-            t.remove(p);
+            kk=t.re(p);
+            t.remove(kk);
             t.shuchu();
         }
         else if(m==3){
@@ -53,7 +54,9 @@ int main(int argc, const char * argv[]) {
             cin>>p;
             cout<<"第二个："<<endl;
             cin>>q;
-            t.remove2(p,q);
+            kk=t.re(p);
+            kkk=t.re(q);
+            t.remove2(kk,kkk);
             t.shuchu();
         }
         else if(m==4){

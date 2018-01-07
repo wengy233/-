@@ -45,7 +45,7 @@ int main(int argc, const char * argv[]) {
             cout<<"请输入删除的路由器编号："<<endl;
             cin>>p;
             kk=t.re(p);
-            t.remove(kk);
+            t.removeVertex(kk);
             t.shuchu();
         }
         else if(m==3){
@@ -56,7 +56,7 @@ int main(int argc, const char * argv[]) {
             cin>>q;
             kk=t.re(p);
             kkk=t.re(q);
-            t.remove2(kk,kkk);
+            t.removeEdge(kk,kkk);
             t.shuchu();
         }
         else if(m==4){

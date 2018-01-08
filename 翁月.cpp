@@ -37,7 +37,6 @@ bool Graphmtx::insertEdge(int v1, int v2,int cost)
             break;
         }
     }
-    cout<<w1<<" "<<w2<<endl;
     if(w1 > -1 && w2< numVertices && w1>-1 && w2<numVertices && Edge[w1][w2] == maxWeight)
     {
         Edge[w1][w2] = Edge[w2][w1] = cost;
@@ -48,7 +47,7 @@ bool Graphmtx::insertEdge(int v1, int v2,int cost)
 }
 void Graphmtx::printPath(int v, int dist[], int path[])
 {
-    cout << "| Â·ÓÉÆ÷" << p[v] <<"Â·ÓÉ±í£º" <<"           |"<< endl;
+    cout << "| è·¯ç”±å™¨" << p[v] <<"è·¯ç”±è¡¨ï¼š" <<"           |"<< endl;
     int i, j, k, n =numVertices;
     int * d = new int[n];
     for (i = 0; i<n; i++)
@@ -62,15 +61,15 @@ void Graphmtx::printPath(int v, int dist[], int path[])
                 d[k++] = j;
                 j = path[j];
             }
-            cout <<"| Ä¿µÄÂ·ÓÉ"<<p[i]<<" ";
-            cout <<"ÏÂÒ»Ìø£º"<<p[d[--k]]<<" ";
-            cout << "È¨Öµ£º" << dist[i] <<" |"<< endl;
+            cout <<"| ç›®çš„è·¯ç”±"<<p[i]<<" ";
+            cout <<"ä¸‹ä¸€è·³ï¼š"<<p[d[--k]]<<" ";
+            cout << "æƒå€¼ï¼š" << dist[i] <<" |"<< endl;
         }
     }
     delete[] d;
 }
 int Graphmtx::re(int q){
-    int v;
+    int v=-1;
     for(int h=0;h<numVertices;h++){
         if(p[h]==q){
             v=h;

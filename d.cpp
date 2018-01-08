@@ -14,11 +14,8 @@ bool Graphmtx::removeVertex(int v)
         return false;
     	}
     int i,j;
-    for(i=v;(i+1)<numVertices;i++)
-    {
-    	VerticesList[i] = VerticesList[i+1];
-	}
-    p[v]=p[numVertices-1];//É¾³ý 
+    VerticesList[v] = VerticesList[numVertices-1];
+	p[v]=p[numVertices-1];//É¾³ý 
     for(i = 0;i<numVertices;i++)
     {
         if( Edge[i][v] >0 && Edge[i][v] <maxWeight )

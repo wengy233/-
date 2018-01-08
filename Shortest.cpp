@@ -4,7 +4,7 @@ using namespace std;
 
 void Graphmtx::Shortest(int v) { 
 	if(v==-1){
-             cout<<"鏌ユ棤姝よ矾鐢辫〃"<<endl;
+             cout<<"查无此路由表"<<endl;
              return;
         }
 	int dist[numVertices];

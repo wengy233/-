@@ -3,10 +3,7 @@
 using namespace std;
 
 void Graphmtx::Shortest(int v) { 
-	if(v==-1){
-             cout<<"查无此路由表"<<endl;
-             return;
-        }
+	cout << "��ޱ" << endl;
 	int dist[numVertices];
 	int path[numVertices];
 	if(v==-1)

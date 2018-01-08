@@ -37,7 +37,6 @@ bool Graphmtx::insertEdge(int v1, int v2,int cost)
             break;
         }
     }
-    cout<<w1<<" "<<w2<<endl;
     if(w1 > -1 && w2< numVertices && w1>-1 && w2<numVertices && Edge[w1][w2] == maxWeight)
     {
         Edge[w1][w2] = Edge[w2][w1] = cost;
@@ -63,14 +62,14 @@ void Graphmtx::printPath(int v, int dist[], int path[])
                 j = path[j];
             }
             cout <<"| 目的路由"<<p[i]<<" ";
-            cout <<"下一跳："<<p[d[--k]+1]<<" ";
+            cout <<"下一跳："<<p[d[--k]]<<" ";
             cout << "权值：" << dist[i] <<" |"<< endl;
         }
     }
     delete[] d;
 }
 int Graphmtx::re(int q){
-    int v;
+    int v=-1;
     for(int h=0;h<numVertices;h++){
         if(p[h]==q){
             v=h;
@@ -80,6 +79,7 @@ int Graphmtx::re(int q){
     return v;
 }
 void Graphmtx::shuchu(){
+    cout<<"     ";
     for(int i=0;i<numVertices;i++){
         cout<<p[i]<<"  ";
     }

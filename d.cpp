@@ -1,15 +1,6 @@
 #include"tp.h"
 #include<iostream>
 using namespace std;
-int Graphmtx::search(int v){
-    int i;
-    for(i=0;i<numVertices;i++){
-        if(p[i]==v){
-            break;
-        }
-    }
-    return i;
-}
 bool Graphmtx::removeVertex(int v)
 {
     if(v < 0 && v>= numVertices)
@@ -23,8 +14,8 @@ bool Graphmtx::removeVertex(int v)
         return false;
     	}
     int i,j;
-    VerticesList[v] = VerticesList[numVertices - 1];
-    p[v]=p[numVertices-1];//删除 
+    VerticesList[v] = VerticesList[numVertices-1];
+	p[v]=p[numVertices-1];//删除 
     for(i = 0;i<numVertices;i++)
     {
         if( Edge[i][v] >0 && Edge[i][v] <maxWeight )
@@ -52,24 +43,4 @@ bool Graphmtx::removeEdge(int v1,int v2)
         return false;
     }
 }
-void Graphmtx::remove(int v){
-    int i;
-    i=search(v);
-    if(i==numVertices)
-    {
-    	cout<<"不存在该路由器！！！"<<endl;
-    	return;
-	}
-    removeVertex(i);
-}
-void Graphmtx::remove2(int v1,int v2){
-    int i,j;
-    i=search(v1);
-    j=search(v2);
-    if(i==numVertices||j==numVertices)
-    {
-    	cout<<"i或j路由器不存在！！！"<<endl;
-    	return;
-	}
-    removeEdge(i,j);
-}
+

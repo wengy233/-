@@ -3,13 +3,12 @@
 using namespace std;
 
 void Graphmtx::Shortest(int v) { 
+	if(v==-1){
+             cout<<"鏌ユ棤姝よ矾鐢辫〃"<<endl;
+             return;
+        }
 	int dist[numVertices];
 	int path[numVertices];
-	if(v>=numVertices)
-	{
-		cout<<"不存在该路由器"<<endl;
-		return;
-	}
 	int n = numVertices;
 	bool *S = new bool[n];
 	int i, j, k;

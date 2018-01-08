@@ -59,7 +59,7 @@ void Graphmtx::Shortest(int v) {
 }
 void Graphmtx::printPath(int v, int dist[], int path[])
 {
-    cout << "| 璺敱鍣? << p[v] <<"璺敱琛細" <<"           |"<< endl;
+    cout << "| 路由器" << p[v] <<"路由表：" <<"           |"<< endl;
     int i, j, k, n =numVertices;
     int * d = new int[n];
     for (i = 0; i<n; i++)
@@ -73,10 +73,11 @@ void Graphmtx::printPath(int v, int dist[], int path[])
                 d[k++] = j;
                 j = path[j];
             }
-            cout <<"| 鐩殑璺敱"<<p[i]<<" ";
-            cout <<"涓嬩竴璺筹細"<<p[d[--k]]<<" ";
-            cout << "鏉冨�硷細" << dist[i] <<" |"<< endl;
+            cout <<"| 目的路由"<<p[i]<<" ";
+            cout <<"下一跳："<<p[d[--k]]<<" ";
+            cout << "权值：" << dist[i] <<" |"<< endl;
         }
     }
     delete[] d;
 }
+

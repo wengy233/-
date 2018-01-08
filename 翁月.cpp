@@ -46,29 +46,6 @@ bool Graphmtx::insertEdge(int v1, int v2,int cost)
     }
     else return false;
 }
-void Graphmtx::printPath(int v, int dist[], int path[])
-{
-    cout << "| 路由器" << p[v] <<"路由表：" <<"           |"<< endl;
-    int i, j, k, n =numVertices;
-    int * d = new int[n];
-    for (i = 0; i<n; i++)
-    {
-        if (i != v)
-        {
-            j = i;
-            k = 0;
-            while (j != v)
-            {
-                d[k++] = j;
-                j = path[j];
-            }
-            cout <<"| 目的路由"<<p[i]<<" ";
-            cout <<"下一跳："<<p[d[--k]]<<" ";
-            cout << "权值：" << dist[i] <<" |"<< endl;
-        }
-    }
-    delete[] d;
-}
 int Graphmtx::re(int q){
     int v=-1;
     for(int h=0;h<numVertices;h++){

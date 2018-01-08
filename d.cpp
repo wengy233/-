@@ -3,6 +3,7 @@
 using namespace std;
 bool Graphmtx::removeVertex(int v)
 {
+	cout<<"肖琳"<<endl;
     if(v < 0 && v>= numVertices)
     	{
 		 cout<< "不存在该路由器！！！"<<endl;

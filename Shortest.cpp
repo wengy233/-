@@ -51,3 +51,26 @@ void Graphmtx::Shortest(int v) {
 	}
 	printPath(v, dist, path);
 }
+void Graphmtx::printPath(int v, int dist[], int path[])
+{
+    cout << "| 路由器" << p[v] <<"路由表：" <<"           |"<< endl;
+    int i, j, k, n =numVertices;
+    int * d = new int[n];
+    for (i = 0; i<n; i++)
+    {
+        if (i != v)
+        {
+            j = i;
+            k = 0;
+            while (j != v)
+            {
+                d[k++] = j;
+                j = path[j];
+            }
+            cout <<"| 目的路由"<<p[i]<<" ";
+            cout <<"下一跳："<<p[d[--k]]<<" ";
+            cout << "权值：" << dist[i] <<" |"<< endl;
+        }
+    }
+    delete[] d;
+}

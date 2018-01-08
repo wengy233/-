@@ -5,7 +5,7 @@ using namespace std;
 void Graphmtx::Shortest(int v) { 
 	int dist[numVertices];
 	int path[numVertices];
-	if(v>=numVertices)
+	if(v==-1)
 	{
 		cout<<"不存在该路由器"<<endl;
 		return;
@@ -18,37 +18,37 @@ void Graphmtx::Shortest(int v) {
 	{
 		dist[i] = Edge[v][i];
 		S[i] = false;
-		if (i != v && dist[i] <maxWeight)
+		if (i != v && dist[i] <maxWeight)   //如果点v不在path数组中，而且有此边，则将点v加入path数组，否则不加入
 			path[i] = v;
 		else
 		{
 			path[i] = -1;
 		}
 	}
-	S[v] = true;
-	dist[v] = 0;
+	S[v] = true;      //表示此边处理完毕
+	dist[v] = 0;      //先将此边的距离置零，相当于初始化
 	for (i = 0; i<n - 1; i++)
 	{
-		min = maxWeight;
+		min = maxWeight;   //先默认最短距离为maxWeight
 		int u = v;
 		for (j = 0; j<n; j++)
 		{
-			if (S[j] == false && dist[j] < min)
+			if (S[j] == false && dist[j] < min)   //如果点还未处理，且存在更短距离
 			{
 				u = j;
-				min = dist[j];
+				min = dist[j];     //存此最短距离
 			}
 		}
-		S[u] = true;
+		S[u] = true;    //让此点处理完毕
 		for (k = 0; k<n; k++)
 		{
 			w = Edge[u][k];
-			if (S[k] == false && w <maxWeight && dist[u] + w<dist[k])
+			if (S[k] == false && w <maxWeight && dist[u] + w<dist[k])   //如果点还未处理，且存在新增路径（通过多个点）小于原来路径
 			{
-				dist[k] = dist[u] + w;
+				dist[k] = dist[u] + w;   //则用更小的边值代替原来的值
 				path[k] = u;
 			}
 		}
 	}
-	printPath(v, dist, path);
+	printPath(v, dist, path);   //调用输出函数
 }

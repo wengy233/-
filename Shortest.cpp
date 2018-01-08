@@ -9,14 +9,11 @@ void Graphmtx::Shortest(int v) {
         }
 	int dist[numVertices];
 	int path[numVertices];
-<<<<<<< HEAD
 	if(v==-1)
 	{
 		cout<<"不存在该路由器"<<endl;
 		return;
 	}
-=======
->>>>>>> fd5175d7943f843f644b14c1eac4cd47304d5b55
 	int n = numVertices;
 	bool *S = new bool[n];
 	int i, j, k;

@@ -3,14 +3,11 @@
 using namespace std;
 
 void Graphmtx::Shortest(int v) { 
-<<<<<<< HEAD
 	cout << "ËïÞ±" << endl;
-=======
 	if(v==-1){
              cout<<"²éÎÞ´ËÂ·ÓÉ±í"<<endl;
              return;
         }
->>>>>>> 24bfb4511e508028772f36f631fe5bf3a97cf050
 	int dist[numVertices];
 	int path[numVertices];
 	if(v==-1)
@@ -62,7 +59,7 @@ void Graphmtx::Shortest(int v) {
 }
 void Graphmtx::printPath(int v, int dist[], int path[])
 {
-    cout << "| è·¯ç”±å™¨" << p[v] <<"è·¯ç”±è¡¨ï¼š" <<"           |"<< endl;
+    cout << "| è·¯ç”±å™? << p[v] <<"è·¯ç”±è¡¨ï¼š" <<"           |"<< endl;
     int i, j, k, n =numVertices;
     int * d = new int[n];
     for (i = 0; i<n; i++)
